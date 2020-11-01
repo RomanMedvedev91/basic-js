@@ -4,7 +4,11 @@ const MODERN_ACTIVITY = 15;
 const HALF_LIFE_PERIOD = 5730;
 
 module.exports = function dateSample(sampleActivity) {
-  if (sampleActivity > 0 && sampleActivity !== Infinity) {
+  if (
+    isNaN(sampleActivity) &&
+    sampleActivity > 0 &&
+    sampleActivity !== Infinity
+  ) {
     // throw new CustomError("Not implemented");
     const ka = 0.693 / HALF_LIFE_PERIOD;
 
